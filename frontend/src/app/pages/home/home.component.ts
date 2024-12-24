@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TelegramService } from '../../services/telegram.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  constructor(private tgService: TelegramService) {
+    this.tgService.MainButton.show()
+  }
 }

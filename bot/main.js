@@ -2,7 +2,8 @@ import { Telegraf, Markup } from 'telegraf';
 
 const TOKEN = '7661179914:AAGqUAAfHzG40FzDeXdRT0Q7rKkYR5FCGqs';
 
-const webAppUrl = 'https://optimum-clean.web.app';
+const webAppUrl = 'https://optimum-clean.web.app/';
+// const webAppUrl = 'https://google.com';
 
 const bot = new Telegraf(TOKEN)
 
