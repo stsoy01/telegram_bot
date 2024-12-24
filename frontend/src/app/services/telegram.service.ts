@@ -23,4 +23,8 @@ export class TelegramService {
   get MainButton(): TgButton {
     return this.tg.MainButton
   }
+
+  public setMainButtonText(): void {
+
+  }
 }
