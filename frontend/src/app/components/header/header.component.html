@@ -28,39 +28,52 @@
           <a class="nav-link active" aria-current="page" href="#"></a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Цены/Тарифы</a>
-        </li>
-
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Сервисы
           </a>
 
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" routerLink="/cleaning">Клининг</a>
             </li>
 
             <li>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Химчистка</a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="#">Консьержинг</a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="#">Репетиторство</a>
             </li>
 
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Подписка на сервисы</a></li>
           </ul>
         </li>
+
+        <li class="nav-item" style="min-width: 63px;">
+          <a class="nav-link active" aria-current="page" routerLink="/team">О нас</a>
+        </li>
+
+        <li class="nav-item"  style="min-width: 213px;">
+          <a class="nav-link active" aria-current="page" routerLink="/team">Полезная информация</a>
+        </li>
+
       </ul>
         <input
           #searchNavbar
           class="form-control me-2"
           type="search"
-          placeholder="Search"
+          placeholder="Поиск..."
           aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" (click)="searchNavbarInput(searchNavbar)">Search</button>
+        <button class="btn btn-outline-success" type="submit"(click)="searchNavbarInput(searchNavbar)">Искать</button>
     </div>
   </div>
 </nav>
