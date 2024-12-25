@@ -4,3 +4,13 @@
     width: 100%;
   }
 }
+
+.btnColorTheme{
+  width: 40px;
+  height: 20px;
+  background: purple;
+}
+
+.navbar-theme {
+  background: var(--main_background_color) !important;
+}

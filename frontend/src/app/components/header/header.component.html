@@ -1,12 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-theme">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">
-      <img
-        ngSrc="assets/images/main_logo.png"
-        alt="логотип"
-        height="512" width="512"
-        style="width: 50px; height: 50px"
-      >{{ 'Optimum Clean' }}</a>
+    <div style="display: flex; align-items: center">
+      <a class="navbar-brand" routerLink="/">
+        <img
+          ngSrc="assets/images/main_logo.png"
+          alt="логотип"
+          height="512" width="512"
+          style="width: 50px; height: 50px"
+        >{{ 'Optimum Clean' }}</a>
+      <button class="btnColorTheme" (click)="setTheme()"></button>
+    </div>
 
     <button
       class="navbar-toggler" type="button"
@@ -30,7 +33,7 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Сервисы
+            Сервисы
           </a>
 
           <ul class="dropdown-menu">
@@ -62,18 +65,18 @@
           <a class="nav-link active" aria-current="page" routerLink="/team">О нас</a>
         </li>
 
-        <li class="nav-item"  style="min-width: 213px;">
+        <li class="nav-item" style="min-width: 213px;">
           <a class="nav-link active" aria-current="page" routerLink="/team">Полезная информация</a>
         </li>
 
       </ul>
-        <input
-          #searchNavbar
-          class="form-control me-2"
-          type="search"
-          placeholder="Поиск..."
-          aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"(click)="searchNavbarInput(searchNavbar)">Искать</button>
+      <input
+        #searchNavbar
+        class="form-control me-2"
+        type="search"
+        placeholder="Поиск..."
+        aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" (click)="searchNavbarInput(searchNavbar)">Искать</button>
     </div>
   </div>
 </nav>

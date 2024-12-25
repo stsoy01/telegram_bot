@@ -18,4 +18,9 @@ export class HeaderComponent {
   public searchNavbarInput(event: any): void {
     console.log(event);
   }
+
+  public setTheme(): void {
+    document.body.setAttribute('theme', 'dark')
+
+  }
 }

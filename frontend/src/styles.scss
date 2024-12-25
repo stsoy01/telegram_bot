@@ -4,6 +4,14 @@
     url('./styles/fonts/Montserrat-VariableFont_wght.ttf');
 }
 
+root {
+  --main_background_color: #fff;
+}
+
+[theme="dark"] {
+  --main_background_color: rgb(28 6 6 / 80%);
+}
+
 * {
   padding: 0;
   margin: 0;
