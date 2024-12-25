@@ -10,7 +10,7 @@ const bot = new Telegraf(TOKEN)
 bot.command('start', (ctx) => {
   ctx.reply(
     'Здравствуйте, вас приветствует клининговая компания Optimum Clean',
-    Markup.keyboard([Markup.button.webApp('Посетите наш сайт, чтобы ознакомиться с услугами компании', webAppUrl)]
+    Markup.keyboard([Markup.button.webApp('Insert your feedback', webAppUrl)]
     )
   )
 })

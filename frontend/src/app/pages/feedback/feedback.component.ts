@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {TelegramService} from "../../services/telegram.service";
+
 
 @Component({
   selector: 'app-feedback',
@@ -9,4 +11,9 @@ import { Component } from '@angular/core';
 })
 export class FeedbackComponent {
 
+  constructor(
+    private telegramService: TelegramService
+  ) {
+    this.telegramService.MainButton.show()
+  }
 }
