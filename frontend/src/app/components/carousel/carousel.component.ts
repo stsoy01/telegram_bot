@@ -1,10 +1,11 @@
 import {
+  AfterViewChecked,
   Component,
-  OnInit
+  Input
 } from "@angular/core";
-import {NgClass} from "@angular/common";
-import {CarouselList} from "./types/carousel.types";
-import {CarouselService} from "./carousel.service";
+import { NgClass } from "@angular/common";
+import { CarouselList } from "./types/carousel.types";
+import { CarouselService } from "./carousel.service";
 
 @Component({
   selector: 'app-carousel',
@@ -16,16 +17,15 @@ import {CarouselService} from "./carousel.service";
   standalone: true
 })
 
-export class CarouselComponent  implements OnInit {
+export class CarouselComponent {
 
-  public carouselItems: CarouselList[] = [];
+  @Input({ alias: 'carouselItems', required: true }) carouselItems: CarouselList[] = [];
+  @Input({required: true}) carouselId!: string;
 
-  constructor(private service: CarouselService) {
+  constructor(private service: CarouselService) { 
   }
 
-  public async ngOnInit(): Promise<void> {
-    // Написать ассинхронный запрос на сервер
-    this.carouselItems = await this.service.getCarouselItems();
+  public get getCarouselAttr(): string {
+    return `#${this.carouselId}`;
   }
-
 }

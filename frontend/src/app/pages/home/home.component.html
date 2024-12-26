@@ -1,5 +1,25 @@
 <app-header></app-header>
-<h3 style="margin: 20px 0; text-transform: uppercase; text-align: center">{{ 'Нам доверяют' }}</h3>
+
+<h3
+  style="
+    margin: 0 auto;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-align: center;
+  "
+>
+  {{ "Экономьте время, доверяя нашим сервисным решениям" }}
+</h3>
+
+<h5 style="margin: 20px 0; text-transform: uppercase; text-align: center">
+  {{ "Нам доверяют" }}
+</h5>
 <app-infinite-clients></app-infinite-clients>
-<h3 style="margin: 20px 0; text-transform: uppercase; text-align: center">{{ 'Отзывы наших клиентов' }}</h3>
-<app-carousel></app-carousel>
+
+<h5 style="margin: 20px 0; text-transform: uppercase; text-align: center">
+  {{ "Отзывы наших клиентов" }}
+</h5>
+<app-carousel
+  [carouselId]="'carouselExampleDark'"
+  [carouselItems]="carouselItems"
+></app-carousel>
