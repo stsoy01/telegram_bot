@@ -5,12 +5,31 @@
   }
 }
 
-.btnColorTheme{
-  width: 40px;
-  height: 20px;
-  background: purple;
+.lightThemeBtn, .darkThemeBtn {
+  display: inline-block;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: inherit;
+  border: none;
+}
+
+.lightThemeBtn {
+  background-image: url('../../../assets/images/sun.png');
+  
+}
+
+.darkThemeBtn { 
 }
 
 .navbar-theme {
   background: var(--main_background_color) !important;
+}
+
+.themeContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+  min-height: 40px;
 }
