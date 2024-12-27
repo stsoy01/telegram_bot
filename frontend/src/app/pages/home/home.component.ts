@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { TelegramService } from '../../services/telegram.service';
-import { HeaderComponent } from "../../components/header/header.component";
-import { InfiniteClientsComponent } from "../../components/infinite-clients/infinite-clients.component";
-import { CarouselComponent } from "../../components/carousel/carousel.component";
-import { CarouselService } from '../../components/carousel/carousel.service';
+import {Component, OnInit} from '@angular/core';
+import {TelegramService} from '../../services/telegram.service';
+import {HeaderComponent} from "../../components/header/header.component";
+import {InfiniteClientsComponent} from "../../components/infinite-clients/infinite-clients.component";
+import {CarouselComponent} from "../../components/carousel/carousel.component";
+import {CarouselService} from '../../components/carousel/carousel.service';
+import {SectionComponent} from "../../components/section/section.component";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { CarouselService } from '../../components/carousel/carousel.service';
   imports: [
     HeaderComponent,
     InfiniteClientsComponent,
-    CarouselComponent
+    CarouselComponent,
+    SectionComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -19,6 +21,7 @@ import { CarouselService } from '../../components/carousel/carousel.service';
 export class HomeComponent implements OnInit {
 
   public carouselItems: any[] = []
+  public section: 'services' | 'feedbacks' | 'regulations' = 'feedbacks'
 
   constructor(
     private carouselService: CarouselService,
@@ -27,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-     // Написать ассинхронный запрос на сервер
+    // Написать ассинхронный запрос на сервер
     this.carouselItems = await this.carouselService.getCarouselItems();
   }
 }

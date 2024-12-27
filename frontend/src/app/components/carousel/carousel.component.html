@@ -27,6 +27,7 @@
   </div>
 
   <div
+    [ngStyle]="{'border-radius': isRounded ? '24px' : ''}"
     class="carousel-inner"
     style="height: 500px"
   >
@@ -36,8 +37,9 @@
           [style]="{'background-image': 'url(' + item.imgUrl + ')'}"
           [ngClass]="['d-block w-100', 'c-img']"
         >
+
         <div [ngClass]="['carousel-caption d-none d-md-block']">
-          <h5>{{ item.title }}</h5>
+          <span>{{ item.title }}</span>
           <p>{{ item.description }}</p>
         </div>
       </div>
@@ -49,7 +51,7 @@
     [attr.data-bs-target]="getCarouselAttr"
     data-bs-slide="prev"
   >
-  
+
     <span
       class="carousel-control-prev-icon"
       aria-hidden="true"

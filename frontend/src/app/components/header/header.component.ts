@@ -16,11 +16,10 @@ import {NgOptimizedImage} from "@angular/common";
 export class HeaderComponent {
 
   public searchNavbarInput(event: any): void {
-    console.log(event);
+    // console.log(event);
   }
 
-  public setTheme(): void {
-    document.body.setAttribute('theme', 'dark')
-
+  public setTheme(event: any): void {
+    document.body.setAttribute('theme', !event.target.checked ? 'dark' : 'light');
   }
 }

@@ -1,24 +1,29 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-theme">
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-theme header">
   <div class="container-fluid">
     <div style="display: flex; align-items: center">
       <a class="navbar-brand" routerLink="/">
         <img
-          ngSrc="assets/images/main_logo.png"
+          [ngSrc]="'assets/images/main_logo.png'"
           alt="логотип"
           height="512"
           width="512"
           style="width: 50px; height: 50px"
-        />{{ "Optimum Clean" }}</a
+        />
+      <span class="logo_title">{{ "Optimum Clean" }}</span></a
       >
 
-      <div class="themeContainer">
-        <button class="lightThemeBtn" (click)="setTheme()"></button>
-        <button class="darkThemeBtn" (click)="setTheme()"></button>
+      <div class="switch">
+        <input type="checkbox" class="switch__input" checked id="Switch" (click)="setTheme($event)">
+        <label class="switch__label" for="Switch">
+          <span class="switch__indicator"></span>
+          <span class="switch__decoration"></span>
+        </label>
       </div>
+
     </div>
 
     <button
-      class="navbar-toggler"
+      class="navbar-toggler page_btn"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -52,26 +57,26 @@
 
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" routerLink="/cleaning">Клининг</a>
+              <a class="dropdown-item" [routerLink]="['/services/cleaning']">Клининг</a>
             </li>
 
             <li>
-              <a class="dropdown-item" href="#">Химчистка</a>
+              <a class="dropdown-item" [routerLink]="['/services/dry-cleaning']">Химчистка</a>
             </li>
 
             <li>
-              <a class="dropdown-item" href="#">Консьержинг</a>
+              <a class="dropdown-item" [routerLink]="['/services/concierge']">Консьержинг</a>
             </li>
 
             <li>
-              <a class="dropdown-item" href="#">Репетиторство</a>
+              <a class="dropdown-item" [routerLink]="['/services/tutoring']">Репетиторство</a>
             </li>
 
             <li>
-              <hr class="dropdown-divider" />
+              <hr class="dropdown-divider"/>
             </li>
 
-            <li><a class="dropdown-item" href="#">Подписка на сервисы</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services/subscription']">Подписка на сервисы</a></li>
           </ul>
         </li>
 
@@ -95,7 +100,7 @@
         aria-label="Search"
       />
       <button
-        class="btn btn-outline-success"
+        class="btn btn-outline-success page_btn"
         type="submit"
         (click)="searchNavbarInput(searchNavbar)"
       >

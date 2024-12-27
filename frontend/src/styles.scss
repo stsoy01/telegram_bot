@@ -6,10 +6,16 @@
 
 root {
   --main_background_color: #fff;
+  --main_text_color: #fff;
+  --main_btn_color: green;
 }
 
+
 [theme="dark"] {
-  --main_background_color: rgb(28 6 6 / 80%);
+  --main_background_color: #2B2F38;
+  --main_text_color: #C1AE9E;
+  --main_btn_color: #FE6022;
+  --main_btn_border: inherit;
 }
 
 * {
@@ -17,4 +23,19 @@ root {
   margin: 0;
   box-sizing: border-box;
   font-family: 'montserrat', serif;
+  color: var(--main_text_color) !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  background-color: var(--main_background_color) !important;
+}
+
+.page_btn {
+  background-color: var(--main_btn_color) !important;
+  border: 1px solid var(--main_btn_border);
+}
+
+ul, ol, li {
+  list-style-type: none;
 }

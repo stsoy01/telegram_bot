@@ -1,28 +1,31 @@
 import {
-  AfterViewChecked,
   Component,
   Input
 } from "@angular/core";
-import { NgClass } from "@angular/common";
-import { CarouselList } from "./types/carousel.types";
-import { CarouselService } from "./carousel.service";
+import {
+  NgClass,
+  NgStyle
+} from "@angular/common";
+import {CarouselList} from "./types/carousel.types";
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
   imports: [
-    NgClass
+    NgClass,
+    NgStyle
   ],
   standalone: true
 })
 
 export class CarouselComponent {
 
-  @Input({ alias: 'carouselItems', required: true }) carouselItems: CarouselList[] = [];
+  @Input({alias: 'carouselItems', required: true}) carouselItems: CarouselList[] = [];
   @Input({required: true}) carouselId!: string;
+  @Input() public readonly isRounded: boolean = true;
 
-  constructor(private service: CarouselService) { 
+  constructor() {
   }
 
   public get getCarouselAttr(): string {

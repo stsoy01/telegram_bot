@@ -3,6 +3,8 @@ section {
   position: relative;
   width: 100%;
   overflow: hidden;
+  background-color: var(--main_background_color) !important;
+
 }
 
 .scroll {
@@ -13,9 +15,10 @@ section {
   div {
     white-space: nowrap;
     color: #212121;
-    background-color: #fff;
     animation: animate 40s -40s linear infinite;
     will-change: transform;
+    background-color: var(--main_background_color) !important;
+
 
     &:nth-child(2) {
       animation: animate2 40s -20s linear infinite;
@@ -34,6 +37,7 @@ section {
   width: 350px;
   background-size: contain;
   background-repeat: no-repeat;
+  margin: 0 20px;
 
 }
 

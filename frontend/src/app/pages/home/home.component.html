@@ -1,25 +1,50 @@
 <app-header></app-header>
 
-<h3
-  style="
-    margin: 0 auto;
-    padding: 0 10px;
-    text-transform: uppercase;
-    text-align: center;
-  "
->
-  {{ "Экономьте время, доверяя нашим сервисным решениям" }}
-</h3>
+<app-section>
+  <div style="background-color: var(--main_background_color); padding-top: 50px">
+    <h3
+      style="
+      margin: 0 auto;
+      padding: 0 10px;
+      text-transform: uppercase;
+      text-align: center;
+    ">{{ "Экономьте время, доверяя нашим сервисным решениям" }}
+    </h3>
+  </div>
+</app-section>
 
-<h5 style="margin: 20px 0; text-transform: uppercase; text-align: center">
-  {{ "Нам доверяют" }}
-</h5>
-<app-infinite-clients></app-infinite-clients>
+<app-section>
+  <h5 style="padding: 20px 0; text-transform: uppercase; text-align: center">
+    {{ "Нас выбирают" }}
+  </h5>
+  <app-infinite-clients></app-infinite-clients>
+</app-section>
 
-<h5 style="margin: 20px 0; text-transform: uppercase; text-align: center">
-  {{ "Отзывы наших клиентов" }}
-</h5>
-<app-carousel
-  [carouselId]="'carouselExampleDark'"
-  [carouselItems]="carouselItems"
-></app-carousel>
+<app-section>
+  <div style="background-color: var(--main_background_color); padding: 20px 0 40px 0">
+    <div style="display: flex; justify-content: space-around; max-width: 600px; margin: 0 auto">
+      <h6 (click)="section = 'services'">Услуги</h6>
+      <h6 (click)="section = 'feedbacks'">Отзывы</h6>
+      <h6 (click)="section = 'regulations'">Регламент</h6>
+    </div>
+  </div>
+
+  @switch (section) {
+    @case ('services') {
+      {{ 'services' }}
+    }
+    @case ('regulations') {
+      {{ 'regulations' }}
+    }
+    @case ('feedbacks') {
+      <div style="padding: 0 15px; background-color: var(--main_background_color)">
+        <app-carousel
+          [carouselId]="'carouselExampleDark'"
+          [carouselItems]="carouselItems"
+        ></app-carousel>
+      </div>
+    }
+  }
+</app-section>
+
+
